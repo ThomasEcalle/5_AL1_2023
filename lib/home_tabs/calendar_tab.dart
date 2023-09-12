@@ -1,3 +1,4 @@
+import 'package:al_2023/home_tabs/button_square.dart';
 import 'package:flutter/material.dart';
 
 class CalendarTab extends StatelessWidget {
@@ -5,11 +6,8 @@ class CalendarTab extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      color: Colors.blue[200],
-      child: const Center(
-        child: Text('Je suis le calendrier'),
-      ),
+    return const Center(
+      child: ButtonSquare(),
     );
   }
 }
