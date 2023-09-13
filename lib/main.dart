@@ -1,4 +1,5 @@
 import 'package:al_2023/home.dart';
+import 'package:al_2023/layouts/layouts_screen.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -20,7 +21,7 @@ class MyApp extends StatelessWidget {
           ),
         ),
       ),
-      home: Home(),
+      home: const LayoutsScreen(),
     );
   }
 }
