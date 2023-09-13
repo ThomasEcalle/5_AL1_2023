@@ -26,7 +26,7 @@ class _CalendarTabState extends State<CalendarTab> {
             height: 100,
             width: 100,
             decoration: BoxDecoration(
-              color: Colors.blue,
+              color: _color,
               borderRadius: BorderRadius.circular(_radius),
             ),
           )
