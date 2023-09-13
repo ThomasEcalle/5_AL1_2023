@@ -17,6 +17,16 @@ class ButtonSquare3 extends StatelessWidget {
         color: color,
         borderRadius: BorderRadius.circular(20),
       ),
+      child: Material(
+        color: Colors.transparent,
+        borderRadius: BorderRadius.circular(20),
+        child: InkWell(
+          borderRadius: BorderRadius.circular(20),
+          onTap: () {
+            print('coucou');
+          },
+        ),
+      ),
     );
   }
 }

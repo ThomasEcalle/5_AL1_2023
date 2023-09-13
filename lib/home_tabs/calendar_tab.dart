@@ -12,6 +12,7 @@ class CalendarTab extends StatefulWidget {
 
 class _CalendarTabState extends State<CalendarTab> {
   Color _color = Colors.orange;
+  double _radius = 0;
 
   @override
   Widget build(BuildContext context) {
@@ -20,9 +21,15 @@ class _CalendarTabState extends State<CalendarTab> {
       child: Container(
         color: Colors.transparent,
         child: Center(
-          child: ButtonSquare3(
-            color: _color,
-          ),
+          child: AnimatedContainer(
+            duration: const Duration(milliseconds: 500),
+            height: 100,
+            width: 100,
+            decoration: BoxDecoration(
+              color: Colors.blue,
+              borderRadius: BorderRadius.circular(_radius),
+            ),
+          )
         ),
       ),
     );
@@ -32,6 +39,7 @@ class _CalendarTabState extends State<CalendarTab> {
     print('Hello from calendar');
     setState(() {
       _color = _color == Colors.orange ? Colors.green : Colors.orange;
+      _radius = _radius == 0 ? 20 : 0;
     });
   }
 }
