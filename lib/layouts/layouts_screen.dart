@@ -45,34 +45,48 @@ class LayoutsScreen extends StatelessWidget {
             Expanded(
               child: Container(
                 color: Colors.yellow,
-                child: Row(
+                child: Stack(
                   children: [
-                    Expanded(
-                      child: Container(
-                        color: Colors.green,
-                        height: double.infinity,
-                        width: double.infinity,
-                        child: const Padding(
-                          padding: EdgeInsets.symmetric(
-                            horizontal: 20,
-                            vertical: 10,
-                          ),
-                          child: Row(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              Bubble(),
-                              SizedBox(width: 10),
-                              Bubble(),
-                              Spacer(),
-                              Bubble(),
-                            ],
+                    Row(
+                      children: [
+                        Expanded(
+                          child: Container(
+                            color: Colors.green,
+                            height: double.infinity,
+                            width: double.infinity,
+                            child: const Padding(
+                              padding: EdgeInsets.symmetric(
+                                horizontal: 20,
+                                vertical: 10,
+                              ),
+                              child: Row(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  Bubble(),
+                                  SizedBox(width: 10),
+                                  Bubble(),
+                                  Spacer(),
+                                  Bubble(),
+                                ],
+                              ),
+                            ),
                           ),
                         ),
-                      ),
+                        Expanded(
+                          child: Container(
+                            color: Colors.blue,
+                            width: double.infinity,
+                            height: double.infinity,
+                            child: Center(
+                              child: AdaptiveContainer(),
+                            ),
+                          ),
+                        ),
+                      ],
                     ),
-                    Expanded(
-                      child: Container(
-                        color: Colors.blue,
+                    Positioned.fill(
+                      child: Center(
+                        child: AdaptiveContainer(),
                       ),
                     ),
                   ],
@@ -85,3 +99,23 @@ class LayoutsScreen extends StatelessWidget {
     );
   }
 }
+
+class AdaptiveContainer extends StatelessWidget {
+  const AdaptiveContainer({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return LayoutBuilder(
+        builder: (context, constraints) {
+          final maxWidth = constraints.maxWidth;
+          print(maxWidth);
+          return Container(
+            height: 100,
+            width: maxWidth * .8,
+            color: Colors.red.withOpacity(.5),
+          );
+        }
+    );
+  }
+}
+
