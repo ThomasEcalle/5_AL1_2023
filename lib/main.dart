@@ -1,4 +1,5 @@
 import 'package:al_2023/lists/lists_screen.dart';
+import 'package:al_2023/webservices/webservices_screen.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -20,7 +21,7 @@ class MyApp extends StatelessWidget {
           ),
         ),
       ),
-      home: ListsScreen(),
+      home: const WebServicesScreen(),
     );
   }
 }
